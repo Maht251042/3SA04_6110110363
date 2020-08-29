@@ -38,7 +38,7 @@ export default function Forecast(props) {
    }
 const styles = StyleSheet.create({
     content:{
-         paddingTop: 30,
+        paddingTop: 30,
         textAlign : 'center',
         fontSize: 30,
         fontWeight: 'bold',
