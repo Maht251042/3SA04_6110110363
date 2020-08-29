@@ -33,7 +33,7 @@ export default function ZipCodeScreen(){
         <View>
             <Button
                     style={styles.Button} color="black" 
-                    title="Wellcome to Website"
+                    title="Welcome to Website"
                     onPress={() => Linking.openURL("https://weather.com/weather/today/l/7.00,100.48?par=google&temp=c")}
             ></Button>
 
@@ -55,21 +55,21 @@ const styles = StyleSheet.create({
     zipPlace: {
         textAlign: 'center',
         textAlignVertical: 'center',
-        flex: 1,
-        fontSize: 25,
+        flex: 0.1,
+        fontSize: 20,
         fontWeight: 'bold',
         backgroundColor: 'black',
-        opacity: 0.7,
+        opacity: 0.6,
         color: 'white'
     },
     zipCode: {
         flex: 1,
-        padding: 5,
-        textAlign: 'right',
+        padding: 30,
+        textAlign: 'left',
         color: 'white',
     },
     backdrop: {
         width: '100%',
-        height: 200
+        height: 150
     }
 }) 
