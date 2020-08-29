@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, View, Text, StyleSheet, ImageBackground } from 'react-native';
+import { FlatList, View, Text, StyleSheet, ImageBackground, Button, Linking } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
@@ -30,11 +30,20 @@ const ZipItem = ({place, code, navigation, img}) => (
 export default function ZipCodeScreen(){
     const navigation = useNavigation()
     return (
+        <View>
+            <Button
+                    style={styles.Button} color="black" 
+                    title="Wellcome to Website"
+                    onPress={() => Linking.openURL("https://weather.com/weather/today/l/7.00,100.48?par=google&temp=c")}
+            ></Button>
+
             <FlatList
-                data = {availableZipItems}
-                keyExtractor = {item => item.code}
-                renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
-            />         
+                    data = {availableZipItems}
+                    keyExtractor = {item => item.code}
+                    renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
+            />             
+        </View>   
+                 
     );
 }
 const styles = StyleSheet.create({
@@ -49,8 +58,8 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize: 25,
         fontWeight: 'bold',
-        backgroundColor: 'pink',
-        opacity: 0.6,
+        backgroundColor: 'black',
+        opacity: 0.7,
         color: 'white'
     },
     zipCode: {
