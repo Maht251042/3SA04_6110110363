@@ -10,4 +10,4 @@ export default function WeatherScreen({route}) {
             <StatusBar style="auto" />
         </View>
     );
-}
+}//

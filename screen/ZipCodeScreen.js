@@ -1,4 +1,4 @@
-
+//
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { FlatList, View, Text, StyleSheet } from 'react-native';
