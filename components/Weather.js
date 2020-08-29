@@ -1,47 +1,56 @@
-import React,{useState, useEffect} from 'react';
-import { Text, ImageBackground, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react'
+import { Text, View, ImageBackground, StyleSheet } from 'react-native'
 import Forecast from './Forecast'
-
-export default function Weather(props) {
-    
+export default function Wheather(props){
     const [forecastInfo, setForecastInfo] = useState({
-        main: '-',
-        description: '-',
+        main: 'main',
+        description: 'description',
         temp: 0
     })
-
     useEffect(() => {
         console.log(`fetching data with zipCode = ${props.zipCode}`)
         if (props.zipCode) {
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${props.zipCode},th&units=metric&APPID=a44f55626de8f51f38b7a1819b3c8a2a`)
+            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${props.zipCode},th&units=metric&APPID=386285ce0816bcfa6c10a7c2ff8076de`)
             .then((response) => response.json())
             .then((json) => {
-            setForecastInfo({
+                setForecastInfo({
                     main: json.weather[0].main,
                     description: json.weather[0].description,
-                    temp: json.main.temp });
+                    temp: json.main.temp
+                });
             })
-                .catch((error) => {
-                    console.warn(error);
+            .catch((error) => {
+                console.warn(error);
             });
         }
-            }, [props.zipCode])
+    }, [props.zipCode])
     
-
     return (
-        <ImageBackground source={require('../bg1.jpeg')} style={styles.backdrop}>
-            <Text>Zip Code</Text>
-            <Text>{props.zipCode}</Text>
+        <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
+            <View style={styles.temp}>
+            <Text style={styles.zipCode}>Zip Code is {props.zipCode}.</Text>
             <Forecast {...forecastInfo}/>
-        </ImageBackground>    
-    );
+            </View>
+        </ImageBackground>
+    )
 }
-
 const styles = StyleSheet.create({
     backdrop: {
+        width: '100%',
+        height: '100%'
+    },
+    temp: {
         flexDirection: 'column',
         alignItems: 'center',
+        backgroundColor : 'black',
+        opacity: 0.4,
         width: '100%',
-        height: '100%'    
-    }    
-})   
+        height: '50%'
+    },
+    zipCode: {
+        paddingTop : 25, 
+        textAlign : 'center',
+        fontSize : 20,
+        color: 'white'
+    }
+})
