@@ -8,7 +8,7 @@ export default function Forecast(props) {
         break;
         case 'Mist' : img = require('../mist.png') 
         break;
-        case 'Clouds' : img = require('../clouds.png') 
+        case 'Clouds' : img = require('../clouds.jpg') 
         break;
         case 'Sunny' : img = require('../sunny.png') 
         break;

@@ -49,10 +49,10 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     temp: {
+        flex: 0.4,
         flexDirection: 'column',
         alignItems: 'center',
-        backgroundColor : 'black',
-        opacity: 0.5, 
+        opacity: 100000, 
         height: '55%',
 
 
