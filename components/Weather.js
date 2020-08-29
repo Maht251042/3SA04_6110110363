@@ -43,9 +43,8 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         backgroundColor : 'black',
-        opacity: 0.4,
-        width: '100%',
-        height: '50%'
+        opacity: 0.5,
+        height: '45%'
     },
     zipCode: {
         paddingTop : 25, 
